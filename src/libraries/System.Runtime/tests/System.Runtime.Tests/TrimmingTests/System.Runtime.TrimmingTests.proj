@@ -6,6 +6,11 @@
     <TestConsoleAppSourceFiles Include="AppDomainGetThreadWindowsPrincipalTest.cs">
       <SkipOnTestRuntimes>osx-x64;linux-x64;browser-wasm</SkipOnTestRuntimes>
     </TestConsoleAppSourceFiles>
+    <TestConsoleAppSourceFiles Include="DebuggerAnnotationStoreTrimmed.cs">
+      <DisabledProperties>DebuggerSupport</DisabledProperties>
+      <!-- The test looks up CoreLib types by name through reflection, which Native AOT does not keep metadata for. -->
+      <NativeAotIncompatible>true</NativeAotIncompatible>
+    </TestConsoleAppSourceFiles>
     <TestConsoleAppSourceFiles Include="DebuggerSupportTrue.cs">
       <EnabledProperties>DebuggerSupport</EnabledProperties>
       <NativeAotIncompatible>true</NativeAotIncompatible>

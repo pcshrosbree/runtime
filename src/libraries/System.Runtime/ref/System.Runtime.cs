@@ -8888,6 +8888,7 @@ namespace System.Diagnostics
     {
         public static readonly string? DefaultCategory;
         public static bool IsAttached { get { throw null; } }
+        public static void Annotate(string annotation, System.Exception exception) { }
         public static void Break() { }
         public static void BreakForUserUnhandledException(System.Exception exception) { }
         public static bool IsLogging() { throw null; }
